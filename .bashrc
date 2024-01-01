@@ -16,6 +16,10 @@ PS1='[\u@\h \W]\$ '
 # Define Editor
 export EDITOR=nvim
 
+#set history length
+HISTSIZE=1000
+HISTFILESIZE=2000
+
 # -----------------------------------------------------
 # ALIASES
 # -----------------------------------------------------
