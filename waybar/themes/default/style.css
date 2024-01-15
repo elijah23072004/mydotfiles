@@ -220,7 +220,6 @@ label:focus {
     -gtk-icon-effect: highlight;
     background-color: #eb4d4b;
 }
-
 #idle_inhibitor {
     background-color: #2d3436;
 }
@@ -229,7 +228,6 @@ label:focus {
     background-color: #ecf0f1;
     color: #2d3436;
 }
-
 #mpd {
     background-color: #66cc99;
     color: #2a5c45;

@@ -349,11 +349,12 @@
     },
 
     "idle_inhibitor": {
-        "format": "{icon}",
-        "tooltip": false,
+        "format": "{icon}",      
+        "start-activated" : true,
+        //"tooltip": false,
         "format-icons":{
-            "activated": "Auto lock OFF",
-            "deactivated": "ON"
+            "activated": "",
+            "deactivated": ""
         }
     }
 }

@@ -18,7 +18,7 @@ export EDITOR=nvim
 
 #set history length
 HISTSIZE=1000
-HISTFILESIZE=2000
+HISTFILESIZE=10000
 
 # -----------------------------------------------------
 # ALIASES
@@ -39,7 +39,8 @@ alias od='~/private/onedrive.sh'
 alias rw='~/dotfiles/waybar/reload.sh'
 alias winclass="xprop | grep 'CLASS'"
 alias dot="cd ~/dotfiles"
-
+alias comp="cd ~/Shared/CompSci" 
+alias restartAudio="pulseaudio -k"
 # -----------------------------------------------------
 # Window Managers
 # -----------------------------------------------------
