@@ -23,7 +23,7 @@ HISTFILESIZE=10000
 # -----------------------------------------------------
 # ALIASES
 # -----------------------------------------------------
-
+alias compileC="~/Dotfiles/Scripts/compileC.sh"
 alias c='clear'
 alias nf='neofetch'
 alias pf='pfetch'
@@ -41,6 +41,8 @@ alias winclass="xprop | grep 'CLASS'"
 alias dot="cd ~/dotfiles"
 alias comp="cd ~/Shared/CompSci" 
 alias restartAudio="pulseaudio -k"
+alias wifiTest="speedtest-cli"
+alias wifitest="speedtest-cli"
 # -----------------------------------------------------
 # Window Managers
 # -----------------------------------------------------
