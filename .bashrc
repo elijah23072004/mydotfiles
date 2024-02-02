@@ -17,8 +17,8 @@ PS1='[\u@\h \W]\$ '
 export EDITOR=nvim
 
 #set history length
-HISTSIZE=1000
-HISTFILESIZE=10000
+HISTSIZE=-1
+HISTFILESIZE=-1
 
 # -----------------------------------------------------
 # ALIASES
