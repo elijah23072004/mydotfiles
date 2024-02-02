@@ -43,6 +43,11 @@ alias comp="cd ~/Shared/CompSci"
 alias restartAudio="pulseaudio -k"
 alias wifiTest="speedtest-cli"
 alias wifitest="speedtest-cli"
+alias httpstart="python3 -m http.server"
+alias jellyfinstart="sudo systemctl start jellyfin.service"
+alias jellyfinstop="sudo systemctl stop jellyfin.service"
+
+
 # -----------------------------------------------------
 # Window Managers
 # -----------------------------------------------------
