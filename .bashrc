@@ -23,7 +23,7 @@ HISTFILESIZE=-1
 # -----------------------------------------------------
 # ALIASES
 # -----------------------------------------------------
-alias compileC="~/Dotfiles/Scripts/compileC.sh"
+alias compileC="~/dotfiles/scripts/compileC.sh"
 alias c='clear'
 alias nf='neofetch'
 alias pf='pfetch'
@@ -46,8 +46,8 @@ alias wifitest="speedtest-cli"
 alias httpstart="python3 -m http.server"
 alias jellyfinstart="sudo systemctl start jellyfin.service"
 alias jellyfinstop="sudo systemctl stop jellyfin.service"
-
-
+alias surfshark="sudo openvpn /etc/openvpn/uk-lon.prod.surfshark.com_udp.ovpn"
+alias cleanup='~/dotfiles/scripts/cleanup.sh'
 # -----------------------------------------------------
 # Window Managers
 # -----------------------------------------------------
@@ -68,6 +68,7 @@ alias gpl="git pull"
 alias gst="git stash"
 alias gsp="git stash; git pull"
 alias gcheck="git checkout"
+alias gcredential="git config credential.helper store"
 
 # -----------------------------------------------------
 # SCRIPTS

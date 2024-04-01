@@ -1,3 +1,106 @@
+Version 2.8.3.4
+https://gitlab.com/stephan-raabe/dotfiles/-/releases/2.8.3.4
+--------------------------------------------------------
+- Fix swww gray background issue. New command on autostart.conf is 
+exec-once = swww init || swww-daemon --format xrgb
+- Using blurred version of background image for wlogout
+- Add progress bar to dunst notification for wallpaper change and processing
+
+Version 2.8.3.2
+https://gitlab.com/stephan-raabe/dotfiles/-/releases/2.8.3.2
+--------------------------------------------------------
+- Replace rofi with rofi-lbonn-wayland to get rofi wayland support
+- Several modifications in the ML4W Welcome App
+- ML4W Settings App allows to set between 1 and 10 Hyprland workspaces
+
+Version 2.8.3.1
+https://gitlab.com/stephan-raabe/dotfiles/-/releases/2.8.3.1
+--------------------------------------------------------
+- Add compatibility with Hyprland 0.37.1
+
+Version 2.8.3
+https://gitlab.com/stephan-raabe/dotfiles/-/releases/2.8.3
+--------------------------------------------------------
+- New ML4W Dotfiles Settings App based on GTK4 with many new customization options
+- Hyprlock with blurred version of the current wallpaper as background. Blur strength can be adjusted in the ML4W Dotfiles Settings app
+- Hyprlock now showing the current time and username
+
+Version 2.8.2.1
+https://gitlab.com/stephan-raabe/dotfiles/-/releases/2.8.2
+--------------------------------------------------------
+- ML4W Welcome app includes more settings for hypridle. Incl. recommendation from Hyprland Wiki
+
+Version 2.8.2
+https://gitlab.com/stephan-raabe/dotfiles/-/releases/2.8.2
+--------------------------------------------------------
+General:
+- Force installation of sddm to fix theme issue with sddm-sugar-candy theme. sddm-git doesn't work with themes at the moment
+- snapshot.sh script check now for required timeshift and (optional) grub-btrfs packages
+- Waybar Bluetooth module now hides automatically if no bluetooth device is detected. Please check that "bluetooth" is not commented out in ~/dotfiles/waybar/modules.json
+- Replace hypridle-git with hypridle and hyprlock-git with hyprlock
+- Desktop file for ML4W Welcome App to be listed in application launcher + icon
+
+Version 2.8.1
+https://gitlab.com/stephan-raabe/dotfiles/-/releases/2.8.1
+--------------------------------------------------------
+General:
+- Swayidle replaced with hypridle (config in dotfiles/hypr/hypridle.conf)
+- Swaylock replaced with hyprlock (config in dotfiles/hypr/hyprlock.conf)
+- New default wallpaper in Hyprland style
+- xarchiver and zip added for thunar
+- Rofi border width can be adjusted in dotfiles/.settings/rofi-border.rasi
+- emote added to select Emojis (SUPER+.)
+
+ML4W Welcome App: 
+- Opens Hyprland systeminfo from the about menu
+- Timeshift can be installed from the settings menu
+- Terminal for Thunar can be set from the settings menu
+
+Hyprland:
+- Bugfix timeshift detection in installupdates.sh 
+
+Qtile:
+- Polybar removed from the dotfiles
+
+Version 2.8
+https://gitlab.com/stephan-raabe/dotfiles/-/releases/2.8
+--------------------------------------------------------
+Hyprland:
+- New Welcome app based on GTK4. Can be launched with the icon on waybar or with the command ml4w
+- nwg-look-bin to define a custom GTK Theme
+- Updated waybar starter theme
+- New waybar idle-inhibator icon
+- New waybar theme ml4w-minimal
+- New window animation variation animation-moving.conf
+- New AI icon to open ChatGPT
+- Hyprland installation with hyprland package only. hyprland-git removed from the installer
+
+Version 2.7.2
+https://gitlab.com/stephan-raabe/dotfiles/-/releases/2.7.2
+--------------------------------------------------------
+Hyprland:
+- New waybar icon to enable/disable swaylock. Left mouse click to toggle swaylock, right mouse click to start swaylock
+- Show/Hide idle_inhibitor module (swaylock) in Settings script
+- Start of swayidle can be deactivated in the settings script
+- New animation variation animation-moving.conf
+
+General:
+- Installation script bug fixing
+- Alias cleanup added to .bashrc for Arch Linux maintenance
+- New Hyprland configuration variation script to roll back to default variations via tty
+
+Version 2.7.1
+https://gitlab.com/stephan-raabe/dotfiles/-/releases/2.7.1
+--------------------------------------------------------
+Hyprland:
+- Add optional network-manager applet support. Can be activated in Settings script System/nm-applet
+- Show/Hide network module in Settings script
+- New Settings for keyboard (incl. natural_scroll for touchpads)
+- Add ChatGPT Icon to Waybar. Can be disabled in settings
+
+Qtile:
+- Removed polybar from the installation for stability reasons.
+
 Version 2.7
 https://gitlab.com/stephan-raabe/dotfiles/-/releases/2.7
 --------------------------------------------------------
