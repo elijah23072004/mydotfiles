@@ -23,6 +23,7 @@ HISTFILESIZE=-1
 # -----------------------------------------------------
 # ALIASES
 # -----------------------------------------------------
+alias bluetooth="blueman-manager"
 alias compileC="~/dotfiles/scripts/compileC.sh"
 alias c='clear'
 alias nf='neofetch'
@@ -30,7 +31,7 @@ alias pf='pfetch'
 alias ls='eza -a --icons'
 alias ll='eza -al --icons'
 alias lt='eza -a --tree --level=1 --icons'
-alias shutdown='systemctl poweroff'
+#alias shutdown='systemctl poweroff'
 alias v='$EDITOR'
 alias ts='~/dotfiles/scripts/snapshot.sh'
 alias matrix='cmatrix'
