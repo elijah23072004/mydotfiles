@@ -1,1 +1,1 @@
-require("myNvim")
+require("myNvim") 

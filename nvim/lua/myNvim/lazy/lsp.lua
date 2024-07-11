@@ -44,12 +44,21 @@ return {
                         capabilities = capabilities,
                         settings = {
                             Lua = {
-				    runtime = { version = "Lua 5.1" },
+                                runtime = { version = "Lua 5.1" },
                                 diagnostics = {
                                     globals = { "vim", "it", "describe", "before_each", "after_each" },
                                 }
                             }
                         }
+                    }
+                    lspconfig.rust_analyzer.setup {
+                        settings = {
+                            ['rust_analyzer'] = {
+                                diagnostics = {
+                                    enable = true;
+                                }
+                            }
+                        },
                     }
                 end,
             }
@@ -73,8 +82,8 @@ return {
                 { name = 'nvim_lsp' },
                 { name = 'luasnip' }, -- For luasnip users.
             }, {
-                { name = 'buffer' },
-            })
+                    { name = 'buffer' },
+                })
         })
 
         vim.diagnostic.config({

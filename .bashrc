@@ -23,6 +23,8 @@ HISTFILESIZE=-1
 # -----------------------------------------------------
 # ALIASES
 # -----------------------------------------------------
+alias inv='nvim $(fzf -m --preview="bat --color=always {}")'
+alias startRemoteControlServer="/home/eli/Coding/projects/remote_control/run.sh"
 alias bluetooth="blueman-manager"
 alias compileC="~/dotfiles/scripts/compileC.sh"
 alias c='clear'
@@ -124,6 +126,9 @@ export PATH="/usr/lib/ccache/bin/:$PATH"
 # START STARSHIP
 # -----------------------------------------------------
 eval "$(starship init bash)"
+
+#fzf key bindings and fuzzy completion
+source <(fzf --bash)
 
 # -----------------------------------------------------
 # PYWAL
