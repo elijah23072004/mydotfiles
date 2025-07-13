@@ -12,7 +12,6 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 PS1='[\u@\h \W]\$ '
-
 # Define Editor
 export EDITOR=nvim
 
@@ -26,7 +25,6 @@ HISTFILESIZE=-1
 alias inv='nvim $(fzf -m --preview="bat --color=always {}")'
 alias startRemoteControlServer="/home/eli/Coding/projects/remote_control/run.sh"
 alias bluetooth="blueman-manager"
-alias compileC="~/dotfiles/scripts/compileC.sh"
 alias c='clear'
 alias nf='neofetch'
 alias pf='pfetch'
@@ -38,7 +36,6 @@ alias v='$EDITOR'
 alias ts='~/dotfiles/scripts/snapshot.sh'
 alias matrix='cmatrix'
 alias wifi='nmtui'
-alias od='~/private/onedrive.sh'
 alias rw='~/dotfiles/waybar/reload.sh'
 alias winclass="xprop | grep 'CLASS'"
 alias dot="cd ~/dotfiles"
@@ -51,6 +48,8 @@ alias jellyfinstart="sudo systemctl start jellyfin.service"
 alias jellyfinstop="sudo systemctl stop jellyfin.service"
 alias surfshark="sudo openvpn /etc/openvpn/uk-lon.prod.surfshark.com_udp.ovpn"
 alias cleanup='~/dotfiles/scripts/cleanup.sh'
+alias update='yay -Syu'
+
 # -----------------------------------------------------
 # Window Managers
 # -----------------------------------------------------

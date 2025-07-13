@@ -48,7 +48,7 @@ else
 fi
 echo ""
 
-if [[ $(_isInstalledYay "Timeshift") == 1 ]] ;then
+if [[ $(_isInstalledYay "Timeshift") == 0 ]] ;then
     if gum confirm "DO YOU WANT TO CREATE A SNAPSHOT?" ;then
         echo ""
         c=$(gum input --placeholder "Enter a comment for the snapshot...")

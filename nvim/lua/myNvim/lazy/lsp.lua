@@ -56,10 +56,11 @@ return {
                             ['rust_analyzer'] = {
                                 diagnostics = {
                                     enable = true;
-                                }
+                                },
                             }
                         },
                     }
+                    --lspconfig.rust_analyzer.inlayHints.enable(true)
                 end,
             }
         })
