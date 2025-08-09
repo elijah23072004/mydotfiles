@@ -46,12 +46,6 @@
         }
     },
     
-    // ML4W Welcome App
-    "custom/ml4w-welcome": {
-        "on-click": "~/dotfiles/apps/ML4W_Welcome-x86_64.AppImage",
-        "format": " ",
-        "tooltip": false
-    },
 
     // Hyprland Window
     "hyprland/window": {
@@ -59,19 +53,8 @@
             "(.*) - Brave": "$1",
             "(.*) - Chromium": "$1",
             "(.*) - Brave Search": "$1",
-            "(.*) - Outlook": "$1",
-            "(.*) Microsoft Teams": "$1"
         },
         "separate-outputs": true
-    },
-
-    // Youtube Subscriber Count
-    "custom/youtube": {
-        "format": " {}",
-        "exec": "python ~/private/youtube.py",
-        "restart-interval": 600,
-        "on-click": "chromium https://studio.youtube.com",
-        "tooltip": false
     },
     
     // Cliphist
@@ -95,35 +78,6 @@
         "on-click-right": "~/dotfiles/.settings/software.sh",
         "tooltip": false
     },
-    
-    // Wallpaper
-    "custom/wallpaper": {
-        "format": "",
-        "on-click": "~/dotfiles/hypr/scripts/wallpaper.sh select",
-        "on-click-right": "~/dotfiles/hypr/scripts/wallpaper.sh",
-        "tooltip": false
-    },
-
-    // Waybar Themes
-    "custom/waybarthemes": {
-        "format": "",
-        "on-click": "~/dotfiles/waybar/themeswitcher.sh",
-        "tooltip": false
-    },
-    
-    // Settings
-    "custom/settings": {
-        "format": "",
-        "on-click": "alacritty --class dotfiles-floating -e ~/dotfiles/hypr/start-settings.sh",
-        "tooltip": false
-    },
-
-    // Keybindings
-    "custom/keybindings": {
-        "format": "",
-        "on-click": "~/dotfiles/hypr/scripts/keybindings.sh",
-        "tooltip": false
-    },
 
     // Filemanager Launcher
     "custom/filemanager": {
@@ -132,19 +86,6 @@
         "tooltip": false
     },
 
-    // Outlook Launcher
-    "custom/outlook": {
-        "format": "",
-        "on-click": "chromium --app=https://outlook.office.com/mail/",
-        "tooltip": false
-    },
-
-    // Teams Launcher
-    "custom/teams": {
-        "format": "",
-        "on-click": "chromium --app=https://teams.microsoft.com/go",
-        "tooltip": false
-    },
 
     // Browser Launcher
     "custom/browser": {
@@ -152,27 +93,6 @@
         "on-click": "~/dotfiles/.settings/browser.sh",
         "tooltip": false
     },    
-
-    // ChatGPT Launcher
-    "custom/chatgpt": {
-        "format": "",
-        "on-click": "chromium --app=https://chat.openai.com",
-        "tooltip": false
-    },
-
-    // Calculator
-    "custom/calculator": {
-        "format": "",
-        "on-click": "qalculate-gtk",
-        "tooltip": false
-    },
-
-    // Windows VM
-    "custom/windowsvm": {
-        "format": "",
-        "on-click": "~/dotfiles/scripts/launchvm.sh",
-        "tooltip": false
-    },
 
     // Rofi Application Launcher
     "custom/appmenu": {
@@ -210,7 +130,6 @@
 
     // Clock
     "clock": {
-        // "timezone": "America/New_York",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
         "calendar": {
                     "mode"          : "year",
@@ -253,7 +172,7 @@
     "disk": {
         "interval": 30,
         "format": "D {percentage_used}% ",
-        "path": "/",
+        "path": "/home",
         "on-click": "alacritty -e htop"
     }, 
 
@@ -370,14 +289,4 @@
         "icon": false,
     },
 
-    "idle_inhibitor": {
-        "format": "{icon}",      
-        "start-activated" : true,
-        //"tooltip": false,
-        "format-icons":{
-            "activated": "",
-            "deactivated": ""
-        },
-        "on-click-right": "hyprlock"
-    },
 }
