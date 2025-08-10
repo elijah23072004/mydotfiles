@@ -11,11 +11,10 @@ cache_weather_hex=${cache_dir}/weather-hex
 cache_weather_icon=${cache_dir}/weather-icon
 
 ## WEATHER API DATA & KEYS! --------- INPUT YOUR DETAILS FROM openweathermap.org !!!
-KEY=$(echo ~/dotfiles/scripts/weatherData.sh key)
-ID=$(echo ~/dotfiles/scripts/weatherData.sh id) # Steps: 1. Go to openweathermap.org | 2. Search your City | 3. The City ID is in the URL. 
+KEY=$(~/dotfiles/scripts/weatherData.sh "key")
+ID=$(~/dotfiles/scripts/weatherData.sh "id") # Steps: 1. Go to openweathermap.org | 2. Search your City | 3. The City ID is in the URL. 
 UNIT="metric"	# Available options : 'metric' or 'imperial'
 ## --------------------------------------------------------------------------------
-
 ## Make cache dir
 if [[ ! -d "$cache_dir" ]]; then
 	mkdir -p ${cache_dir}
@@ -23,7 +22,7 @@ fi
 
 ## Get data
 get_weather_data() {
-	weather=`curl -sf "http://api.openweathermap.org/data/2.5/weather?APPID="$KEY"&id="$ID"&units="$UNIT""`
+	weather=`curl -sf "http://api.openweathermap.org/data/2.5/weather?APPID=$KEY&id=$ID&units="$UNIT""`
 	echo ${weather}
 
 	if [ ! -z "$weather" ]; then
@@ -127,7 +126,7 @@ get_weather_data() {
 		echo " " > ${cache_weather_icon}
 		echo -e "Ah well, no weather huh? \nEven if there's no weather, it's gonna be a great day!" > ${cache_weather_quote}
 		echo "-" > ${cache_weather_degree}
-		echo "#adadff" > ${tcache_weather_hex}
+		echo "#adadff" > ${cache_weather_hex}
 	fi
 }
 
