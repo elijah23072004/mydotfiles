@@ -5,7 +5,7 @@ eww kill
 eww daemon
 
 # Day label at the top of the screen.
-eww open daybox
+#eww open daybox
 
 # Wofi button  -- Cancelled/still wip, I think it looks bad.
 # eww open menu

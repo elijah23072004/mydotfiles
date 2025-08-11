@@ -9,6 +9,7 @@
 "margin-bottom":-8,
 
 "modules-left": [
+  "custom/appmenu",
   "custom/os_btn",
   "hyprland/workspaces",
   "wlr/taskbar"
@@ -50,7 +51,7 @@
 
 "clock": {
 "format": "{:%H:%M - %a | %d %b %Y}",
-"tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
 
 "calendar": {
         "mode"          : "year",
@@ -72,6 +73,7 @@
 "format-wifi" : "󰤢 {bandwidthDownBits}",
 "format-ethernet": "󰤢 {bandwidthDownBits}",
 "format-disconnected" : "󰤠 No Network",
+"on-click":"kitty nmtui",
 "interval": 5,
 "tooltip": false
 },
@@ -109,8 +111,8 @@
     "return-type": "json",       
     "exec": "~/dotfiles/scripts/updates.sh",
     "restart-interval": 60,
-    "on-click": "alacritty -e ~/dotfiles/scripts/installupdates.sh",
-    "on-click-right": "~/dotfiles/.settings/software.sh",
+    //"on-click": "alacritty -e ~/dotfiles/scripts/installupdates.sh",
+    //"on-click-right": "~/dotfiles/.settings/software.sh",
     "tooltip": false
 },
 
@@ -137,6 +139,12 @@
     "on-click": "blueman-manager"
 },
 
+
+
+"custom/appmenu": {
+    "format": "⁝Ξ",
+    "on-click": "wofi -S drun -c ~/dotfiles/wofi/config -s ~/dotfiles/wofi/style.css",
+    "tooltip":false, 
+},
+
 }
-
-

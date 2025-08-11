@@ -1,12 +1,3 @@
-"  _   _                 _            
-" | \ | | ___  _____   _(_)_ __ ___   
-" |  \| |/ _ \/ _ \ \ / / | '_ ` _ \  
-" | |\  |  __/ (_) \ V /| | | | | | | 
-" |_| \_|\___|\___/ \_/ |_|_| |_| |_| 
-"                                     
-" by Stephan Raabe (2023) 
-" ----------------------------------------------------- 
-
 " Add line numbers
 set number
 
@@ -34,8 +25,6 @@ set tabstop=4
 " Use space characters instead of tabs.
 set expandtab
 
-" Do not save backup files.
-set nobackup
 
 " Do not let cursor scroll below or above N number of lines when scrolling.
 set scrolloff=10

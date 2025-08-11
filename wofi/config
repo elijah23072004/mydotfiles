@@ -9,3 +9,4 @@ allow_images=true
 line_wrap=word
 width=30%
 hide_scroll=true
+prompt=Applications

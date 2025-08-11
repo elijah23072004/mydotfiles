@@ -9,3 +9,4 @@ allow_images=true
 line_wrap=word
 hide_scroll=true
 sort-order=numeric
+prompt=Clipboard
