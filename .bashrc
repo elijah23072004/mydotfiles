@@ -1,13 +1,3 @@
-#    _               _              
-#   | |__   __ _ ___| |__  _ __ ___ 
-#   | '_ \ / _` / __| '_ \| '__/ __|
-#  _| |_) | (_| \__ \ | | | | | (__ 
-# (_)_.__/ \__,_|___/_| |_|_|  \___|
-# 
-# by Stephan Raabe (2023)
-# -----------------------------------------------------
-# ~/.bashrc
-# -----------------------------------------------------
 
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
@@ -140,11 +130,4 @@ cat ~/.cache/wal/sequences
 echo ""
 if [[ $(tty) == *"pts"* ]]; then
     pfetch
-else
-    if [ -f /bin/qtile ]; then
-        echo "Start Qtile X11 with command Qtile"
-    fi
-    if [ -f /bin/hyprctl ]; then
-        echo "Start Hyprland with command Hyprland"
-    fi
 fi
