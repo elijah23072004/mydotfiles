@@ -124,11 +124,11 @@
     "tooltip": false
 },
 // Power Menu
-"custom/exit": {
-    "format": " ",
-    "on-click": "wlogout",
-    "tooltip": false
-},
+//"custom/exit": {
+//    "format": " ",
+//    "on-click": "wlogout",
+//    "tooltip": false
+//},
 
 // Bluetooth
 "bluetooth": {
@@ -142,9 +142,11 @@
 
 
 "custom/appmenu": {
-    "format": "⁝Ξ",
+    "format": " ",
     "on-click": "wofi -S drun -c ~/dotfiles/wofi/config -s ~/dotfiles/wofi/style.css",
+    "on-click-right": "wlogout",
     "tooltip":false, 
+
 },
 
 }

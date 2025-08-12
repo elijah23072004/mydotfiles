@@ -24,7 +24,7 @@
     :y "30px"
     :width "70px"
     :height "70px"
-    :anchor "top right")
+    :anchor "bottom left")
   (menu)
 )
 (defwindow diinkitemperature
