@@ -107,11 +107,11 @@
                 },
                 {
                     "label" : "\uf021",
-                    "command": "systemctl restart"
+                    "command": "systemctl reboot"
                 },
                 {
                     "label" : "󰒲",
-                    "command": "systemctl suspend"
+                    "command": "~/dotfiles/scripts/sleep.sh"
                 }
             ]
         },
@@ -140,12 +140,22 @@
                     "update-command": "~/dotfiles/scripts/swaync/checkBluetooth.sh" 
                 },
                 {
-                    "label": " ",
-                    "command": "sh -c 'bluetoothctl connect 88:92:CC:4A:8B:04'"
+                    "label":" ",
+                    "type":"toggle",
+                    "active" : true,
+                    "command":"pactl set-sink-mute @DEFAULT_SINK@ toggle",
+                    "update-command:": "~/dotfiles/swaync/checkMute.sh"
                 },
                 {
-                    "label":" ",
-                    "command":"pactl set-sink-mute @DEFAULT_SINK@ toggle"
+                    "label": "󰂏",
+                    "type" :"toggle",
+                    "active":true,
+                    "command": "~/dotfiles/scripts/swaync/togglePowerSaver.sh",
+                    "update-command":"~/dotfiles/scripts/swaync/checkPowerSaver.sh" 
+                },
+                {
+                    "label": " ",
+                    "command": "sh -c 'bluetoothctl connect 88:92:CC:4A:8B:04'"
                 },
                 {
                     "label": " ",
@@ -157,13 +167,6 @@
                     "active":true,
                     "command": "~/dotfiles/scripts/swaync/toggleNightLight.sh",
                     "update-command":"~/dotfiles/scripts/swaync/checkNightLight.sh"
-                },
-                {
-                    "label": "󰂏",
-                    "type" :"toggle",
-                    "active":true,
-                    "command": "~/dotfiles/scripts/swaync/togglePowerSaver.sh",
-                    "update-command":"~/dotfiles/scripts/swaync/checkPowerSaver.sh" 
                 },
                 { 
                     "label": "",
