@@ -26,4 +26,4 @@ bash "$WEATHER_POLLING" --getdata &
 disown
 
 # -- Experimental gif, uncomment if you want it :D
-# eww open gif3
+#eww open gif3

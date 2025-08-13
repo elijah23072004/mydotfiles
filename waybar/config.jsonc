@@ -27,7 +27,7 @@
 "pulseaudio",
 "bluetooth",
 "custom/cliphist",
-"custom/exit",
+"custom/notifications",
 ],
 
 "sway/workspaces": {
@@ -123,12 +123,12 @@
     "on-click-middle": "sleep 0.1 && ~/dotfiles/scripts/cliphist.sh w",
     "tooltip": false
 },
-// Power Menu
-//"custom/exit": {
-//    "format": " ",
-//    "on-click": "wlogout",
-//    "tooltip": false
-//},
+//notifcations bar 
+"custom/notifications": {
+    "format": "⤓",
+    "on-click": "swaync-client -t",
+    "tooltip": false
+},
 
 // Bluetooth
 "bluetooth": {
@@ -143,7 +143,7 @@
 
 "custom/appmenu": {
     "format": " ",
-    "on-click": "wofi -S drun -c ~/dotfiles/wofi/config -s ~/dotfiles/wofi/style.css",
+    "on-click": "pgrep wofi > /dev/null 2>&1 && killall wofi ||  wofi -S drun -c ~/dotfiles/wofi/config -s ~/dotfiles/wofi/style.css --location=top_left -x 15 -y 15",
     "on-click-right": "wlogout",
     "tooltip":false, 
 

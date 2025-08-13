@@ -1,0 +1,177 @@
+{
+    "$schema": "/etc/xdg/swaync/configSchema.json",
+    "positionX": "right",
+    "positionY": "top",
+    "layer": "overlay",
+    "control-center-layer": "top",
+    "layer-shell": true,
+
+    "layer-shell-cover-screen": true,
+    "cssPriority": "user",
+    
+    "control-center-width": 350,
+    "control-center-height": 600,
+    "control-center-margin-top": 10,
+    "control-center-margin-bottom": 10,
+    "control-center-margin-right": 10,
+    "control-center-margin-left": 0,
+    "notification-2fa-action": true,
+    "notification-inline-replies": false,
+    "notification-body-image-height": 100,
+    "notification-body-image-width": 500,
+    "timeout": 10,
+    "timeout-low": 5,
+    "timeout-critical": 0,
+
+    "fit-to-screen": true,
+    "relative-timestamps": true,
+    "keyboard-shortcuts": true,
+    "notification-grouping": true,
+    "image-visibility": "when-available",
+    "transition-time": 200,
+    "hide-on-clear": false,
+    "hide-on-action": true,
+    "text-empty": "No Notifications",
+    "script-fail-notify": true,
+    "notification-visibility": {
+        "example-name": {
+            "state": "muted",
+            "urgency": "Low",
+            "app-name": "Spotify"
+        }
+    },
+    "widgets": [
+        "mpris",
+        "buttons-grid#powerMenu",
+        "buttons-grid#buttons",
+        "volume",
+        "backlight",
+        "inhibitors",
+        "title#notifications",
+        "dnd",
+        "notifications"
+    ],
+    "widget-config": {
+        "mpris": {
+            "image-size": 50,
+            "image-radius": 0
+        },
+        "volume" :{
+            "label":"🔊",
+            "expand-button-label": " ",
+            "collapse-button-label": " ",
+            "show-per-app": true,
+            "show-per-app-icon": true,
+            "show-per-app-label": false
+        },
+        "backlight" :{
+            "label": "󰃟 "
+        },
+        "inhibitors": {
+            "text": "Inhibitors",
+            "button-text": "Clear All",
+            "clear-all-button": true
+        },
+        "title#notifications": {
+            "text": "Notifications",
+            "clear-all-button": true,
+            "button-text": "Clear All"
+        },
+        "dnd": {
+            "text": "Do Not Disturb"
+        },
+        "label": {
+            "max-lines": 5,
+            "text": "Label Text"
+        },
+        "mpris": {
+            "blacklist": [],
+            "autohide": false,
+            "show-album-art": "always",
+            "loop-carousel": false
+        },
+        "buttons-grid#powerMenu": {
+            "buttons-per-row": 5,
+            "actions": [
+                {
+                    "label" : "󰐥",
+                    "command": "systemctl poweroff"
+                },
+                {
+                    "label" : "󰍃", 
+                    "command": "logout"
+                },
+                {
+                    "label" : "\uf023",
+                    "command": "hyprlock"
+                },
+                {
+                    "label" : "\uf021",
+                    "command": "systemctl restart"
+                },
+                {
+                    "label" : "󰒲",
+                    "command": "hyprlock"
+                }
+            ]
+        },
+        "buttons-grid#buttons":{
+            "buttons-per-row": 3,
+            "actions":[
+                {
+                    "label": "ᯤ",
+                    "type": "toggle",
+                    "active": true,
+                    "command": "sh -c '[[ $SWAYNC_TOGGLE_STATE == true ]] && nmcli radio wifi on || nmcli radio wifi off'",
+                    "update-command": "sh -c '[[ $(nmcli radio wifi) == \"enabled\" ]] && echo true || echo false'"
+                },
+                {
+                    "label": "🗝",
+                    "type": "toggle",
+                    "active": true,
+                    "command": "sh -c '[[ $(mullvad status  | grep Connected) ]] && mullvad connect || mullvad disconnect'",
+                    "update-command": "sh -c '[[ $(mullvad status | grep Connected) ]] && echo true || echo false'"
+                },
+                {
+                    "label": "",
+                    "type": "toggle",
+                    "active" : true,
+                    "command": "~/dotfiles/scripts/toggleBluetooth.sh",
+                    "update-command": "~/dotfiles/scripts/swaynm/checkBluetooth.sh" 
+                },
+                {
+                    "label": " ",
+                    "command": "sh -c 'bluetoothctl connect 88:92:CC:4A:8B:04'"
+                },
+                {
+                    "label":" ",
+                    "command":"pactl set-sink-mute @DEFAULT_SINK@ toggle"
+                },
+                {
+                    "label": " ",
+                    "command": "hyprshot --mode region --output-folder ~/Pictures/screenshots/"
+                },
+                {
+                    "label": "",
+                    "type":"toggle",
+                    "active":true,
+                    "command": "~/dotfiles/scripts/swaynm/toggleNightLight.sh",
+                    "update-command":"~/dotfiles/scripts/swaynm/checkNightLight.sh"
+                },
+                {
+                    "label": "󰂏",
+                    "type" :"toggle",
+                    "active":true,
+                    "command": "~/dotfiles/scripts/swaynm/togglePowerSaver.sh",
+                    "update-command":"~/dotfiles/scripts/swaynm/checkPowerSaver.sh" 
+                },
+                { 
+                    "label": "",
+                    "command": "~/dotfiles/scripts/swaynm/musicPlayer.sh"
+                }
+
+            ]
+        }
+
+    }
+}
