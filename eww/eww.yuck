@@ -84,3 +84,18 @@
     :anchor "bottom left")
   (gif3)
 )
+
+
+(defwindow calendar 
+    :monitor '["<primary>", 2,1,0]'
+    :windowtype "dock"
+    :stacking "fg"
+    :namespace "eww"
+    :geometry (geometry
+        :x "0px"
+        :y "10px"
+        :width "200px"
+        :height "200px"
+        :anchor "top center")
+    (calendar)
+)
