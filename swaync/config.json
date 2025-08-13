@@ -136,8 +136,8 @@
                     "label": "",
                     "type": "toggle",
                     "active" : true,
-                    "command": "~/dotfiles/scripts/toggleBluetooth.sh",
-                    "update-command": "~/dotfiles/scripts/swaynm/checkBluetooth.sh" 
+                    "command": "~/dotfiles/scripts/swaync/toggleBluetooth.sh",
+                    "update-command": "~/dotfiles/scripts/swaync/checkBluetooth.sh" 
                 },
                 {
                     "label": " ",
@@ -155,19 +155,19 @@
                     "label": "",
                     "type":"toggle",
                     "active":true,
-                    "command": "~/dotfiles/scripts/swaynm/toggleNightLight.sh",
-                    "update-command":"~/dotfiles/scripts/swaynm/checkNightLight.sh"
+                    "command": "~/dotfiles/scripts/swaync/toggleNightLight.sh",
+                    "update-command":"~/dotfiles/scripts/swaync/checkNightLight.sh"
                 },
                 {
                     "label": "󰂏",
                     "type" :"toggle",
                     "active":true,
-                    "command": "~/dotfiles/scripts/swaynm/togglePowerSaver.sh",
-                    "update-command":"~/dotfiles/scripts/swaynm/checkPowerSaver.sh" 
+                    "command": "~/dotfiles/scripts/swaync/togglePowerSaver.sh",
+                    "update-command":"~/dotfiles/scripts/swaync/checkPowerSaver.sh" 
                 },
                 { 
                     "label": "",
-                    "command": "~/dotfiles/scripts/swaynm/musicPlayer.sh"
+                    "command": "~/dotfiles/scripts/swaync/musicPlayer.sh"
                 }
 
             ]
