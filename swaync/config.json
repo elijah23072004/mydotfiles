@@ -99,7 +99,7 @@
                 },
                 {
                     "label" : "󰍃", 
-                    "command": "logout"
+                    "command": "~/dotfiles/hypr/scripts/exit.sh"
                 },
                 {
                     "label" : "\uf023",
@@ -111,7 +111,7 @@
                 },
                 {
                     "label" : "󰒲",
-                    "command": "hyprlock"
+                    "command": "systemctl suspend"
                 }
             ]
         },
