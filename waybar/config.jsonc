@@ -51,7 +51,8 @@
 
 "clock": {
 "format": "{:%H:%M - %a | %d %b %Y}",
-"on-click":"~/dotfiles/scripts/toggleCalendar.sh",
+"on-click": "~/dotfiles/scripts/toggleCalendar.sh",
+"tooltip" :false
 },
 
 "network": {
@@ -76,7 +77,7 @@
 },
 
 "battery": {
-"format": "{icon} {capacity}%",
+"format": "{icon}  {capacity}%",
 "format-charging": "  {capacity}%",
 "interval": 5,
 "states": {
