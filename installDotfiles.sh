@@ -36,6 +36,8 @@ if [ $os -eq 0 ] ; then
 
      #ly 
      sudo systemctl enable ly.service
+     sudo cp $dotfilesLocation/ly/config.ini /etc/ly/config.ini
+
 
  elif [ $os -eq 1 ] ; then 
      echo "nix"
@@ -50,8 +52,6 @@ if [ $os -eq 0 ] ; then
 fi 
 ./createSymLinks.sh $dotfilesLocation
 
-
-sudo cp $dotfilesLocation/ly/config.ini /etc/ly/config.ini
 
 
 
