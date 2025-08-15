@@ -62,8 +62,8 @@
             lang = "en";
             load = true;
             save = true;
-        }
-            };
+        };
+    };
 
         # Configure keymap in X11
         services.xserver.xkb = {
@@ -174,7 +174,6 @@
             nerd-fonts.noto
 
         ];
-        {
         # Enable Hyprland
         programs.hyprland = {
             enable = true;
@@ -187,7 +186,6 @@
         programs.hyprlock.enable = true;
         services.hypridle.enable = true;
 
-    }
         # Some programs need SUID wrappers, can be configured further or are
         # started in user sessions.
         # programs.mtr.enable = true;
