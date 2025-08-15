@@ -27,7 +27,8 @@ if [ $os -eq 0 ] ; then
      makepkg -si                                                                     
      sudo rm -r yay                                                                  
 
-     fonts = "ttf-nerd-fonts-symmbols  awaita-fonts fontconig otf-font-awesome terminus-font woff2-font-aweso
+    fonts = "ttf-nerd-fonts-symmbols  awaita-fonts fontconig otf-font-awesome terminus-font woff2-font-awesome xorg-fonts-util ttf-roboto-mono ttf-fireacode-nerd"
+
      yay -S --needed eww fonts                                                       
 
      mkdir ~/.config  
