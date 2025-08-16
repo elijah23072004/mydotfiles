@@ -17,9 +17,7 @@
         in {
 
             nixosConfigurations.elinix = nixpkgs.lib.nixosSystem {
-                specialArgs = {
-                    inherit inputs system;
-                };
+                system = system;
             };
             modules = [
                 ./nixos/configuration.nix
@@ -27,7 +25,7 @@
 
             homeConfigurations.eli = home-manager.lib.homeManagerConfiguration {
                 pkgs = nixpkgs.legacyPackages.${system};
-                modules = [ ./home-manager/home.nix];
+                #modules = [ ./home-manager/home.nix];
             };
         };
 
