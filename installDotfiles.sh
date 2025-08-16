@@ -13,7 +13,7 @@ os=$2
 if [ $os -eq 0 ] ; then 
     echo "arch" 
 
-    packages="glib2 base-devel alacritty kitty neovim starship vim firefox thunar hyprland hypridle hyprpaper ly cliphist swww hyprcursor hyprlock hyprshot hyprsunset spotify-launcher blueman bluez pulseaudio pulseaudio-bluetooth brightnessctl playerctl python networkmanager pavucontrol git wget"
+    packages="python-pywal glib2 base-devel alacritty kitty neovim starship vim firefox thunar hyprland hypridle hyprpaper ly cliphist swww hyprcursor hyprlock hyprshot hyprsunset spotify-launcher blueman bluez pulseaudio pulseaudio-bluetooth brightnessctl playerctl python networkmanager pavucontrol git wget"
 
     sudo pacman -Syu                                                                
     sudo pacman -S --needed $packages                                               
@@ -53,7 +53,7 @@ fi
 ./createSymLinks.sh $dotfilesLocation
 
 
-
+cp $dotfilesLocation/wal ~/.cache/wal -r 
 
 #add gtk theme 
 ln -s $dotfilesLocation/gtk ~/.themes
