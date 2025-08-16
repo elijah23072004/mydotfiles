@@ -6,28 +6,27 @@
         nixpkgs.url = "github:nixos/nixpkgs/nixos-25.05";
 
         home-manager = {
-            url = "github:nix-community/home-manger";
-            inputs.nixpkgs.follows="nixpkgs";
+            url = "github:nix-community/home-manager";
+            inputs.nixpkgs.follows = "nixpkgs";
         };
 
     };
-
     outputs = {self, nixpkgs, home-manager, ...}@inputs:
         let 
             system = "x86_64-linux";
         in {
 
             nixosConfigurations.elinix = nixpkgs.lib.nixosSystem {
-                inherit inputs system;
+                inherit system;
             };
             modules = [
                 ./nixos/configuration.nix
             ];
 
+            homeConfigurations.eli = home-manager.lib.homeManagerConfiguration {
+                pkgs = nixpkgs.legacyPackages.${system};
+                modules = [ ./home-manager/home.nix];
+            };
         };
-    homeConfigurations.eli = home-manager.lib.homeManagerConfiguration {
-        pkgs = nixpkgs.legacyPackages.$(system);
-        modules = [ ./home-manager/home.nix];
-    };
-};
-
+    
+}
