@@ -60,7 +60,7 @@
     console.keyMap = "uk";
 
     # Enable CUPS to print documents.
-    services.printing.enable = true;
+    #services.printing.enable = true;
 
     # Enable sound with pipewire.
     services.pulseaudio.enable = false;
@@ -84,8 +84,7 @@
         isNormalUser = true;
         description = "eli";
         extraGroups = [ "networkmanager" "wheel"  "input"];
-        packages = with pkgs; [
-        ];
+        packages = with pkgs; [];
     };
 
     
@@ -142,6 +141,7 @@
         pyprland
         hyprpicker
         hyprpolkitagent
+        firefox
     ];
     fonts.packages = with pkgs; [
         noto-fonts
@@ -164,10 +164,10 @@
         # withUWSM = true;
 
     };
-    environment.sessionVariables.NIXOS_OZONE_WL = "1";
-    environment.sessionVariables.WLR_NO_HARDWARE_CURSORS = "1"
-    programs.hyprlock.enable = true;
-    services.hypridle.enable = true;
+    #environment.sessionVariables.NIXOS_OZONE_WL = "1";
+    #environment.sessionVariables.WLR_NO_HARDWARE_CURSORS = "1"
+    #programs.hyprlock.enable = true;
+    #services.hypridle.enable = true;
 
     nix.settings.experimental-features = {"nix-command" "flakes" ];
 
