@@ -15,7 +15,7 @@
     boot.loader.grub = {
         enable = true;
         device = "nodev";
-        efiSuppoer=true;
+        efiSupport=true;
         efiInstallAsRemovable=true;
     };
     networking.hostName = "elinix"; # Define your hostname.
@@ -53,6 +53,7 @@
         xkb = {
             layout = "gb";
             variant = "";
+        };
     };
 
 
@@ -88,11 +89,11 @@
     };
 
     
-    services.dispayManager = {
+    services.displayManager = {
         autoLogin.enable =false;
         autoLogin.user="eli";
-        lightdm.enable = true;
-    }
+        #lightdm.enable = true;
+    };
 
 
     # Install firefox.
@@ -142,6 +143,9 @@
         hyprpicker
         hyprpolkitagent
         firefox
+        lightdm
+        waybar
+        wofi
     ];
     fonts.packages = with pkgs; [
         noto-fonts
@@ -161,7 +165,6 @@
     # Enable Hyprland
     programs.hyprland = {
         enable = true;
-        # withUWSM = true;
 
     };
     #environment.sessionVariables.NIXOS_OZONE_WL = "1";
@@ -169,7 +172,7 @@
     #programs.hyprlock.enable = true;
     #services.hypridle.enable = true;
 
-    nix.settings.experimental-features = {"nix-command" "flakes" ];
+    nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
     environment.variables= {
         EDITOR = "nvim";
