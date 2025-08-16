@@ -17,7 +17,9 @@
         in {
 
             nixosConfigurations.elinix = nixpkgs.lib.nixosSystem {
-                inherit system;
+                specialArgs = {
+                    inherit inputs system;
+                };
             };
             modules = [
                 ./nixos/configuration.nix
@@ -28,5 +30,5 @@
                 modules = [ ./home-manager/home.nix];
             };
         };
-    
+
 }

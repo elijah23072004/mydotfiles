@@ -1,6 +1,8 @@
 {
     imports = [
+        ./modules/bundle.nix
     ];
+    
     home = {
         username = "eli";
         homeDirectory = "/home/eli";
