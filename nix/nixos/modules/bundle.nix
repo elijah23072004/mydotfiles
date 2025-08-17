@@ -4,7 +4,7 @@
         ./envVars.nix
         ./audio.nix
         ./bootloader.nix
-        ./xservice.nix
+        ./xserver.nix
         ./user.nix
         ./bluetooth.nix
     ];

@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, ... }:
+{ inputs, config, ... }:
 
 {
     imports =
@@ -10,10 +10,23 @@
             ./hardware-configuration.nix
             ./modules/bundle.nix           
             ./packages.nix
+            inputs.sops-nix.nixosModules.sops
         ];
     disabledModules = [
         ./modules/xserver.nix
     ];
+
+    sops.defaultSopsFile = ./secrets/secrets.yaml;
+    sops.defaultSopsFormat = "yaml";
+
+    sops.age.keyFile = "/home/eli/.config/sops/age/keys.txt";
+
+    #networking.wireless.secretsFile = config.sops.defaultSopsFile;
+    #networking.wireless.networks = {
+    #    "ext:uuid_home" = {
+    #        psk = "ext:psk_home";
+    #    };
+    #};
 
     networking.hostName = "elinix"; # Define your hostname.
     #networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -22,8 +35,77 @@
     # networking.proxy.default = "http://user:password@proxy:port/";
     # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
-    # Enable networking
-    networking.networkmanager.enable = true;
+    sops.secrets."phone_ssid" = {
+    };
+
+    sops.secrets."phone_psk" = {
+    };
+
+    sops.secrets."home_ssid" = {
+    };
+
+    sops.secrets."home_psk" = {
+    };
+    networking.networkmanager = {
+        enable = true;
+        wifi.powersave = true;
+        ensureProfiles = {
+            environmentFiles = [
+                config.sops.secrets."phone_ssid".path
+                config.sops.secrets."phone_psk".path
+                config.sops.secrets."home_ssid".path
+                config.sops.secrets."home_psk".path
+            ];
+            #wifi profiles
+            profiles = {
+                "phone" = {
+                    connection = {
+                        id = "phone";
+                        type = "wifi";
+                        autoconnect = true;
+                    };
+                    wifi = {
+                        mode = "infrastructure";
+                        ssid = "$PHONE_SSID";
+                    };
+                    wifi-security = {
+                        key-mgmt = "wpa-psk";
+                        psk = "$PHONE_PSK";
+                    };
+                    ipv4 = {
+                        method = "auto";
+                    };
+                    ipv6 = {
+                        method = "auto";
+                        addr-gen-mode = "stable-privacy";
+                    };
+                };
+
+                "home" = {
+                    connection = {
+                        id = "home";
+                        type = "wifi";
+                        autoconnect = true;
+                    };
+                    wifi = {
+                        mode = "infrastructure";
+                        ssid = "$HOME_SSID";
+                    };
+                    wifi-security = {
+                        key-mgmt = "wpa-psk";
+                        psk = "$HOME_PSK";
+                    };
+                    ipv4 = {
+                        method = "auto";
+                    };
+                    ipv6 = {
+                        method = "auto";
+                        addr-gen-mode = "stable-privacy";
+                    };
+                };
+            };
+        };
+    };
 
     # Set your time zone.
     time.timeZone = "Europe/London";
@@ -43,8 +125,7 @@
         LC_TIME = "en_GB.UTF-8";
     };
 
-
-
+    security.pam.services.kwallet.enable=true;
 
     # Configure console keymap
     console.keyMap = "uk";

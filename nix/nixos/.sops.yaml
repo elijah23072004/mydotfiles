@@ -1,0 +1,10 @@
+keys:
+   - &primary age1gajlek3a846zvxqag7ruv2z5l0yhzjszf5866m7y6pqxgusd7vws2kvdc7
+creation_rules:
+  - path_regex: secrets/secrets.yaml$
+    key_groups:
+      - age:
+        - *primary 
+wireless.env: 
+   home_uuid=foo
+   home_psk=secret

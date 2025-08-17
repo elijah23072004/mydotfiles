@@ -1,4 +1,4 @@
-{
+{ pkgs, ...}: {
        environment.systemPackages = with pkgs; [
         vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
         wget
@@ -44,6 +44,13 @@
         wofi
         swaynotificationcenter
         killall
+        home-manager
+        tlrc
+        age
+        gnupg
+        ssh-to-age
+        sops
+        kdePackages.kwallet
     ];
     fonts.packages = with pkgs; [
         noto-fonts
