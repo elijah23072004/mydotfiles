@@ -1,0 +1,63 @@
+{
+       environment.systemPackages = with pkgs; [
+        vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+        wget
+        neovim
+        git
+        alacritty
+        kitty
+        starship
+        hyprland 
+        hypridle 
+        hyprpaper
+        ly
+        cliphist
+        swww
+        hyprcursor
+        hyprlock
+        hyprsunset
+        spotifyd
+        blueman
+        bluez
+        pulseaudio
+        brightnessctl
+        playerctl
+        python3
+        networkmanager
+        pavucontrol
+        eww
+        xfce.thunar
+        fastfetch
+        eza
+        fzf
+        gcc
+        zig
+        pfetch-rs
+        tmux
+        glib 
+        pyprland
+        hyprpicker
+        hyprpolkitagent
+        firefox
+        lightdm
+        waybar
+        wofi
+        swaynotificationcenter
+        killall
+    ];
+    fonts.packages = with pkgs; [
+        noto-fonts
+        noto-fonts-cjk-sans
+        noto-fonts-emoji
+        liberation_ttf
+        fira-code
+        fira-code-symbols
+        mplus-outline-fonts.githubRelease
+        dina-font
+        proggyfonts
+        roboto-mono
+        terminus_font
+        nerd-fonts.noto
+
+    ];
+}

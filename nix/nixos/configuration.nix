@@ -8,18 +8,15 @@
     imports =
         [ # Include the results of the hardware scan.
             ./hardware-configuration.nix
-            
+            ./modules/bundle.nix           
+            ./packages.nix
         ];
+    disabledModules = [
+        ./modules/xserver.nix
+    ];
 
-    # Bootloader.
-    boot.loader.grub = {
-        enable = true;
-        device = "nodev";
-        efiSupport=true;
-        efiInstallAsRemovable=true;
-    };
     networking.hostName = "elinix"; # Define your hostname.
-    # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
+    #networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
     # Configure network proxy if necessary
     # networking.proxy.default = "http://user:password@proxy:port/";
@@ -46,15 +43,7 @@
         LC_TIME = "en_GB.UTF-8";
     };
 
-    # Enable the X11 windowing system.
-    # You can disable this if you're only using the Wayland session.
-    services.xserver = {
-        enable = true;
-        xkb = {
-            layout = "gb";
-            variant = "";
-        };
-    };
+
 
 
     # Configure console keymap
@@ -63,122 +52,20 @@
     # Enable CUPS to print documents.
     #services.printing.enable = true;
 
-    # Enable sound with pipewire.
-    services.pulseaudio.enable = false;
-    security.rtkit.enable = true;
-    services.pipewire = {
-        enable = true;
-        alsa.enable = true;
-        alsa.support32Bit = true;
-        pulse.enable = true;
-        # If you want to use JACK applications, uncomment this
-        #jack.enable = true;
 
-    };
     services.fstrim.enable = true;
 
     # Enable touchpad support (enabled default in most desktopManager).
     # services.xserver.libinput.enable = true;
 
     # Define a user account. Don't forget to set a password with ‘passwd’.
-    users.users.eli = {
-        isNormalUser = true;
-        description = "eli";
-        extraGroups = [ "networkmanager" "wheel"  "input"];
-        packages = with pkgs; [];
-    };
-
-    
-    services.displayManager = {
-        autoLogin.enable =false;
-        autoLogin.user="eli";
-        #lightdm.enable = true;
-    };
-
-
-    # Install firefox.
-    #programs.firefox.enable = true;
-    #programs.uwsm.enable = true;
-
-    #programs.thunar.enable=true;
-    # List packages installed in system profile. To search, run:
-    # $ nix search wget
-    environment.systemPackages = with pkgs; [
-        vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-        wget
-        neovim
-        git
-        alacritty
-        kitty
-        starship
-        hyprland 
-        hypridle 
-        hyprpaper
-        ly
-        cliphist
-        swww
-        hyprcursor
-        hyprlock
-        hyprsunset
-        spotifyd
-        blueman
-        bluez
-        pulseaudio
-        brightnessctl
-        playerctl
-        python3
-        networkmanager
-        pavucontrol
-        eww
-        xfce.thunar
-        fastfetch
-        eza
-        fzf
-        gcc
-        zig
-        pfetch-rs
-        tmux
-        glib 
-        pyprland
-        hyprpicker
-        hyprpolkitagent
-        firefox
-        lightdm
-        waybar
-        wofi
-    ];
-    fonts.packages = with pkgs; [
-        noto-fonts
-        noto-fonts-cjk-sans
-        noto-fonts-emoji
-        liberation_ttf
-        fira-code
-        fira-code-symbols
-        mplus-outline-fonts.githubRelease
-        dina-font
-        proggyfonts
-        roboto-mono
-        terminus_font
-        nerd-fonts.noto
-
-    ];
     # Enable Hyprland
     programs.hyprland = {
         enable = true;
 
     };
-    #environment.sessionVariables.NIXOS_OZONE_WL = "1";
-    #environment.sessionVariables.WLR_NO_HARDWARE_CURSORS = "1"
-    #programs.hyprlock.enable = true;
-    #services.hypridle.enable = true;
 
     nix.settings.experimental-features = [ "nix-command" "flakes" ];
-
-    environment.variables= {
-        EDITOR = "nvim";
-        BROWSER="firefox";
-        FILEEDITOR="thunar";
-    };
 
     # Some programs need SUID wrappers, can be configured further or are
     # started in user sessions.
