@@ -1,0 +1,12 @@
+[Unit]
+Description=runs a weekly backup of various folders 
+
+[Service]
+ExecStart=/bin/bash /home/eli/dotfiles/scripts/services/backup.sh
+Type=simple
+Restart=on-failure
+RestartSec=1h
+
+[Install]
+WantedBy=default.target
+

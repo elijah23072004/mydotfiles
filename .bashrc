@@ -6,7 +6,7 @@ PS1='[\u@\h \W]\$ '
 export EDITOR=nvim
 
 #set history length
-HISTSIZE=-1
+HISTSIZE=10000
 HISTFILESIZE=-1
 
 # -----------------------------------------------------
@@ -16,37 +16,26 @@ alias inv='nvim $(fzf -m --preview="bat --color=always {}")'
 alias startRemoteControlServer="/home/eli/Coding/projects/remote_control/run.sh"
 alias bluetooth="blueman-manager"
 alias c='clear'
-alias nf='neofetch'
+alias ff='fastfetch'
 alias pf='pfetch'
 alias ls='eza -a --icons'
 alias ll='eza -al --icons'
 alias lt='eza -a --tree --level=1 --icons'
 #alias shutdown='systemctl poweroff'
 alias v='$EDITOR'
-alias ts='~/dotfiles/scripts/snapshot.sh'
 alias matrix='cmatrix'
 alias wifi='nmtui'
-alias rw='~/dotfiles/waybar/reload.sh'
 alias winclass="xprop | grep 'CLASS'"
 alias dot="cd ~/dotfiles"
-alias comp="cd ~/Shared/CompSci" 
+alias comp="cd ~/CompSci" 
 alias restartAudio="pulseaudio -k"
 alias wifiTest="speedtest-cli"
 alias wifitest="speedtest-cli"
 alias httpstart="python3 -m http.server"
 alias jellyfinstart="sudo systemctl start jellyfin.service"
 alias jellyfinstop="sudo systemctl stop jellyfin.service"
-alias surfshark="sudo openvpn /etc/openvpn/uk-lon.prod.surfshark.com_udp.ovpn"
 alias cleanup='~/dotfiles/scripts/cleanup.sh'
 alias update='yay -Syu'
-
-# -----------------------------------------------------
-# Window Managers
-# -----------------------------------------------------
-
-alias Qtile='startx'
-# alias QtileWayland='qtile start -b wayland'
-# Hyprland with Hyprland
 
 # -----------------------------------------------------
 # GIT
@@ -62,31 +51,7 @@ alias gsp="git stash; git pull"
 alias gcheck="git checkout"
 alias gcredential="git config credential.helper store"
 
-# -----------------------------------------------------
-# SCRIPTS
-# -----------------------------------------------------
 
-alias gr='python ~/dotfiles/scripts/growthrate.py'
-alias ChatGPT='python ~/mychatgpt/mychatgpt.py'
-alias chat='python ~/mychatgpt/mychatgpt.py'
-alias ascii='~/dotfiles/scripts/figlet.sh'
-
-# -----------------------------------------------------
-# VIRTUAL MACHINE
-# -----------------------------------------------------
-
-alias vm='~/private/launchvm.sh'
-alias lg='~/dotfiles/scripts/looking-glass.sh'
-alias vmstart='virsh --connect qemu:///system start win11'
-alias vmstop='virsh --connect qemu:///system destroy win11'
-
-# -----------------------------------------------------
-# EDIT CONFIG FILES
-# -----------------------------------------------------
-
-alias confq='$EDITOR ~/dotfiles/qtile/config.py'
-alias confp='$EDITOR ~/dotfiles/picom/picom.conf'
-alias confb='$EDITOR ~/dotfiles/.bashrc'
 
 # -----------------------------------------------------
 # EDIT NOTES
@@ -94,22 +59,9 @@ alias confb='$EDITOR ~/dotfiles/.bashrc'
 
 alias notes='$EDITOR ~/notes.txt'
 
-# -----------------------------------------------------
-# SYSTEM
-# -----------------------------------------------------
-
-alias update-grub='sudo grub-mkconfig -o /boot/grub/grub.cfg'
-alias setkb='setxkbmap de;echo "Keyboard set back to de."'
-
-# -----------------------------------------------------
-# SCREEN RESOLUTINS
-# -----------------------------------------------------
-
-# Qtile
-alias res1='xrandr --output DisplayPort-0 --mode 2560x1440 --rate 120'
-alias res2='xrandr --output DisplayPort-0 --mode 1920x1080 --rate 120'
-
 export PATH="/usr/lib/ccache/bin/:$PATH"
+
+export TERM=xterm
 
 # -----------------------------------------------------
 # START STARSHIP
@@ -131,3 +83,13 @@ echo ""
 if [[ $(tty) == *"pts"* ]]; then
     pfetch
 fi
+
+#android development variables
+export ANDROID_HOME=$HOME/Android/Sdk
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+
+# Created by `pipx` on 2025-11-19 14:42:26
+export PATH="$PATH:/home/eli/.local/bin"
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"

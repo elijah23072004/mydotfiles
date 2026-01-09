@@ -1,0 +1,11 @@
+.cache
+.local/share/Steam
+.minecraft
+Documents/curseforge
+.cargo
+VirtualBox VMs
+MediCat USB v21.12
+Games
+Downloads/of
+Downloads/f
+

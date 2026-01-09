@@ -28,7 +28,6 @@
   (menu)
 )
 (defwindow diinkitemperature
-  :monitor '["<primary>", 2, 1, 0]'
   :windowtype "dock"
   :stacking "bg"
   :namespace "eww"
@@ -42,7 +41,6 @@
 )
 
 (defwindow gif1
-  :monitor '["<primary>", 2, 1, 0]'
   :windowtype "dock"
   :stacking "bg"
   :namespace "eww"
@@ -55,9 +53,20 @@
   (gif1)
 )
 
+(defwindow penguin 
+  :windowtype "dock"
+  :stacking "bg"
+  :namespace "eww"
+  :geometry (geometry
+    :x "30px"
+    :y "30px"
+    :width "70px"
+    :height "70px"
+    :anchor "top left")
+ (penguin)
+)
 
 (defwindow gif2
-  :monitor '["<primary>", 2, 1, 0]'
   :windowtype "dock"
   :stacking "bg"
   :namespace "eww"

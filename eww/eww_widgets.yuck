@@ -40,3 +40,8 @@
 (defwidget gif3 []
   (image :path 'images/gif3.gif')
 )
+(defwidget penguin []
+  (box :halign "center":valign "center" :class "container"
+    (image :path "images/tux-linux-penguin.gif")
+  )
+)

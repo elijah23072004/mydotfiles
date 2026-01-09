@@ -1,0 +1,10 @@
+[Unit]
+Description=Runs backup of notes folder daily 
+
+[Service]
+ExecStart=/bin/bash /home/eli/dotfiles/scripts/services/notesBackup.sh
+Type=simple
+
+[Install]
+WantedBy=default.target
+
