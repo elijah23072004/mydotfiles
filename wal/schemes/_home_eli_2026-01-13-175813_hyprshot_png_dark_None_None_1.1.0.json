@@ -1,0 +1,27 @@
+{
+    "wallpaper": "/home/eli/2026-01-13-175813_hyprshot.png",
+    "alpha": "100",
+    "special": {
+        "background": "#09090d",
+        "foreground": "#e5d9e2",
+        "cursor": "#e5d9e2"
+    },
+    "colors": {
+        "color0": "#09090d",
+        "color1": "#965893",
+        "color2": "#9C6295",
+        "color3": "#A2659B",
+        "color4": "#B359B2",
+        "color5": "#C372C1",
+        "color6": "#BCA8B8",
+        "color7": "#e5d9e2",
+        "color8": "#a0979e",
+        "color9": "#965893",
+        "color10": "#9C6295",
+        "color11": "#A2659B",
+        "color12": "#B359B2",
+        "color13": "#C372C1",
+        "color14": "#BCA8B8",
+        "color15": "#e5d9e2"
+    }
+}

@@ -8,4 +8,27 @@ MediCat USB v21.12
 Games
 Downloads/of
 Downloads/f
+.android 
+.mozilla 
+.npm
+Qt
+.vscode-oss
+gitBuilds
+medicatBak
+Android
+.tmux
+.rustup
+.ipython
+.emacs.d
+.expo
+.hyprland 
+.ipython
+.bun
+.eclipse
+.EasyOCR
+go
+.gradle
+
+.ghcup
+.jd
 

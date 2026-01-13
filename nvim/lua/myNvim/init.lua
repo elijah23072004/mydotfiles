@@ -15,3 +15,5 @@ if vim.lsp.inlay_hint then
     {desc = "Toggle Inlay Hints"}
   )
 end
+
+

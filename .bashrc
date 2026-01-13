@@ -6,7 +6,7 @@ PS1='[\u@\h \W]\$ '
 export EDITOR=nvim
 
 #set history length
-HISTSIZE=10000
+HISTSIZE=-1
 HISTFILESIZE=-1
 
 # -----------------------------------------------------
@@ -93,3 +93,6 @@ export PATH=$PATH:$ANDROID_HOME/platform-tools
 export PATH="$PATH:/home/eli/.local/bin"
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+
+
+unset ANDROID_SDK_ROOT
