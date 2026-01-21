@@ -14,7 +14,7 @@ disable_trackpad() {
 }
 
 if ! [ -f "$STATUS_FILE" ]; then
-  enable_trackpad
+    disable_trackpad
 else
   if [ $(cat "$STATUS_FILE") = "true" ]; then
     disable_trackpad

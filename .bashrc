@@ -88,11 +88,16 @@ fi
 export ANDROID_HOME=$HOME/Android/Sdk
 export PATH=$PATH:$ANDROID_HOME/emulator
 export PATH=$PATH:$ANDROID_HOME/platform-tools
+unset ANDROID_SDK_ROOT
+
 
 # Created by `pipx` on 2025-11-19 14:42:26
 export PATH="$PATH:/home/eli/.local/bin"
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
+#export correct vllm version RolmOcr 
+export VLLM_USE_V1=1
 
-unset ANDROID_SDK_ROOT
+
+

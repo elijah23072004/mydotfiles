@@ -29,6 +29,8 @@ sudo rsync -a --delete-after --exclude-from=$excludeLoc  /home/eli/ "${backupLoc
 #dont care if these 2 fail so can skip and not repeat 
 ssh eli@192.168.68.200 -t /home/eli/Scripts/backupFreshRSS.sh && rsync -a /mnt/Network/Internal/Backups/FreshRSS/ "${backupLoc}FreshRSS" --delete-after
 
-sudo rsync -a /mnt/Data/mp3Lib/ /mnt/Network/Internal/Music
+
+#Will write musci to /mnt/Network/Internal/Music even if network drive not mounted causing over 20-30GB written to / partition 
+#sudo rsync -a /mnt/Data/mp3Lib/ /mnt/Network/Internal/Music
 
 notify-send Backup Completed

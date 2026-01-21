@@ -25,7 +25,8 @@ eww daemon
 #eww open penguin --screen 0 --id primary
 #eww open penguin --screen 1 --id secondary
 
-widgets="diinkitemperature gif1 gif2 penguin"
+#widgets="diinkitemperature gif1 gif2 penguin"
+widgets="diinkitemperature"
 
 eww open-many $widgets --arg "screen=1"
 eww open-many $widgets --arg "screen=0"

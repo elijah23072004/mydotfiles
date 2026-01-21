@@ -33,10 +33,10 @@
   :namespace "eww"
   :geometry (geometry
     :x "0px"
-    :y "360px"
+    :y "30px"
     :width "100px"
     :height "100px"
-    :anchor "top right")
+    :anchor "top left")
   (diinkitemperature)
 )
 
