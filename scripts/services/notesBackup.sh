@@ -1,4 +1,8 @@
 
+
+proton2fa="/home/eli/dotfiles/scripts/protonHandler.sh"
+
+
 outputLoc="/mnt/Data/notesBackup/"
 archiveStart="notes"$(date -u +%y%m%d)
 
@@ -9,14 +13,15 @@ for f in $outputLoc$archiveStart*; do
     if [ -f $f ]; then
         echo "already done backup today skipping"
 
-        rsync -ra /mnt/Data/notesBackup/ /mnt/External/Backup/Notes/
+        rsync -ra /mnt/Data/notesBackup/ /mnt/External/Backups/Notes/
         #sync with proton drive
         
         #update rclone 2fa code
-        facode=cat /home/eli/.encryptionKeys/proton2faCode
-        code=oathtool -b --totp $facode
+        #facode=cat /home/eli/.encryptionKeys/proton2faCode
+        #code=$(oathtool -b --totp $facode)
 
-        rclone sync /mnt/Data/notesBackup/ Proton:NotesBackup --protondrive-2fa=$code
+        $proton2fa && rclone sync /mnt/Data/notesBackup/ Proton:NotesBackup 
+        #exit
     fi
 done
 
@@ -49,8 +54,8 @@ if [ $noFiles -gt $numberToKeep ]; then
     done
 fi
 
-rsync -ra "$outputLoc" /mnt/External/Backup/Notes/
+rsync -ra "$outputLoc" /mnt/External/Backups/Notes/
 #sync with proton drive
-rclone sync "$outputLoc" Proton:NotesBackup
+$proton2fa && rclone sync "$outputLoc" Proton:NotesBackup
 
 
