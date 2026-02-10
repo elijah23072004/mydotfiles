@@ -174,7 +174,7 @@
                     "command": "~/dotfiles/scripts/screenModeHandler.sh regular"
                 },
                 { 
-                    "label": "",
+                    "label": "♬",
                     "command": "~/dotfiles/scripts/swaync/musicPlayer.sh"
                 }
 
