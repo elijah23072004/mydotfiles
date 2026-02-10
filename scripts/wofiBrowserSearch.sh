@@ -4,6 +4,9 @@ prompt="Search:"
 if [ $1 == "--url" ]; then 
     logFile="/home/eli/.cache/wofiBrowserUrl.txt"
     prompt="Url:"
+elif [ $1 == "--dict" ]; then
+    logFile="/home/eli/.cache/wofiDictionary.txt"
+    prompt="Word for definition:"
 fi
 
 if pgrep wofi > /dev/null 2>&1 && killall wofi; then 
@@ -21,5 +24,7 @@ if [ $1 == "--search" ]; then
     firefox --new-window --search "$search"
 elif [ $1 == "--url" ]; then
     firefox --new-window "$search"
+elif [ $1 == "--dict" ]; then
+    kitty -sh "dict  $search | less"
 fi
 

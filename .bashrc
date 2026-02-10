@@ -22,13 +22,13 @@ alias ls='eza -a --icons'
 alias ll='eza -al --icons'
 alias lt='eza -a --tree --level=1 --icons'
 #alias shutdown='systemctl poweroff'
+alias restartAudio='systemctl --user restart pipewire pipewire-pulse'
 alias v='$EDITOR'
 alias matrix='cmatrix'
 alias wifi='nmtui'
 alias winclass="xprop | grep 'CLASS'"
 alias dot="cd ~/dotfiles"
 alias comp="cd ~/CompSci" 
-alias restartAudio="pulseaudio -k"
 alias wifiTest="speedtest-cli"
 alias wifitest="speedtest-cli"
 alias httpstart="python3 -m http.server"

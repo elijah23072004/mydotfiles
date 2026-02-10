@@ -163,10 +163,15 @@
                 },
                 {
                     "label": "",
-                    "type":"toggle",
-                    "active":true,
-                    "command": "~/dotfiles/scripts/swaync/toggleNightLight.sh",
-                    "update-command":"~/dotfiles/scripts/swaync/checkNightLight.sh"
+                    "command": "~/dotfiles/scripts/screenModeHandler.sh night"
+                },
+                {
+                    "label":"🎥",
+                    "command": "~/dotfiles/scripts/screenModeHandler.sh movie" 
+                },
+                {
+                    "label":"☀",
+                    "command": "~/dotfiles/scripts/screenModeHandler.sh regular"
                 },
                 { 
                     "label": "",
