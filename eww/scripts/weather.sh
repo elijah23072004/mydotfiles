@@ -19,9 +19,23 @@ UNIT="metric"	# Available options : 'metric' or 'imperial'
 if [[ ! -d "$cache_dir" ]]; then
 	mkdir -p ${cache_dir}
 fi
+ 
+
+sleepAmount=60 #seconds
+
+wait_for_working_internet() {
+    until ping -c 1 google.com 
+    do
+        sleep $sleepAmount
+        
+    done
+}
 
 ## Get data
 get_weather_data() {
+
+    wait_for_working_internet
+
 	weather=`curl -sf "http://api.openweathermap.org/data/2.5/weather?APPID=$KEY&id=$ID&units="$UNIT""`
 	echo ${weather}
 

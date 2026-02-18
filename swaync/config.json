@@ -127,10 +127,14 @@
                 },
                 {
                     "label": "🗝",
-                    "type": "toggle",
-                    "active": true,
-                    "command": "sh -c '[[ $(mullvad status  | grep Connected) ]] && mullvad connect || mullvad disconnect'",
-                    "update-command": "sh -c '[[ $(mullvad status | grep Connected) ]] && echo true || echo false'"
+                    "type": "button",
+                    "command": "~/dotfiles/scripts/swaync/connectVpn.sh"
+                },
+                {
+                    "label": "🔓",
+                    "type": "button",
+                    "command": "protonvpn disconnect; notify-send 'protonvpn disconnected'"
+
                 },
                 {
                     "label": "",
