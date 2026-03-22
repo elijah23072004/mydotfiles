@@ -11,6 +11,7 @@ fi
 if [ $mode == "movie" ] ; then
     hyprctl hyprsunset identity 
     notify-send "movie mode activated"
+    swaync-client --dnd-on
 elif [ $mode == "night" ]; then
     hyprctl hyprsunset temperature $nightGamma
     notify-send "night mode activated"

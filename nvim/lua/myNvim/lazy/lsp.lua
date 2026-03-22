@@ -56,6 +56,9 @@ return {
                                 diagnostics = {
                                     enable = true;
                                 },
+                                cargo = {
+                                    sysroot="discover";
+                                },
                             }
                         },
                     }

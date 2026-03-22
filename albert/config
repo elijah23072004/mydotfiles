@@ -1,11 +1,14 @@
 [General]
 additional_path_entires=
-memoryDecay=0.67
-showTray=true
+memoryDecay=0.55
+prioritizePerfectMatch=true
+showTray=false
+show_enabled_plugins_first=true
 telemetry=true
 
 [applications]
 enabled=true
+fuzzy=true
 terminal=kitty
 
 [bluetooth]
@@ -14,6 +17,10 @@ enabled=true
 [calculator_qalculate]
 angle_unit=2
 enabled=true
+
+[clipboard]
+enabled=true
+history_length=1000
 
 [commandline]
 enabled=false
@@ -27,7 +34,17 @@ enabled=true
 [python.firefox]
 current_profile_path=8qdcxdu7.default-release
 enabled=true
+fuzzy=true
 index_history=true
+
+[python.translators]
+enabled=false
+
+[system]
+enabled=true
+
+[urlhandler]
+enabled=true
 
 [vpn]
 enabled=false
@@ -64,7 +81,7 @@ showCentered=true
 window_border_radius=18
 window_border_width=1
 window_padding=7
-window_shadow_offset=4
+window_shadow_offset=3
 window_shadow_size=0
 window_spacing=7
 window_width=640
