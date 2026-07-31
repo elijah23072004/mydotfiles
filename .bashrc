@@ -18,9 +18,9 @@ alias bluetooth="blueman-manager"
 alias c='clear'
 alias ff='fastfetch'
 alias pf='pfetch'
-alias ls='eza -a --icons'
-alias ll='eza -al --icons'
-alias lt='eza -a --tree --level=1 --icons'
+alias ls='eza --icons -a'
+alias ll='eza --icons -al'
+alias lt='eza --icons -a --tree --level=1'
 #alias shutdown='systemctl poweroff'
 alias restartAudio='systemctl --user restart pipewire pipewire-pulse'
 alias v='$EDITOR'
@@ -51,7 +51,7 @@ alias gsp="git stash; git pull"
 alias gcheck="git checkout"
 alias gcredential="git config credential.helper store"
 
-
+alias nextReminder="cat ~/Coding/linuxReminder/nextReminder.txt"
 
 # -----------------------------------------------------
 # EDIT NOTES
@@ -60,6 +60,7 @@ alias gcredential="git config credential.helper store"
 alias notes='$EDITOR ~/notes.txt'
 
 export PATH="/usr/lib/ccache/bin/:$PATH"
+export PATH="~/.config/emacs/bin:$PATH"
 
 export TERM=xterm
 

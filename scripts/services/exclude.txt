@@ -1,4 +1,11 @@
 .cache
+.ollama
+.android
+*/node_modules
+.local/share/Trash
+.wine
+.venv
+*/.venv
 .local/share/Steam
 .minecraft
 Documents/curseforge
@@ -7,10 +14,12 @@ VirtualBox VMs
 MediCat USB v21.12
 Games
 Downloads/of
+Downloads/a
 Downloads/f
 .android 
 .mozilla 
 .npm
+*/.npm
 Qt
 .vscode-oss
 gitBuilds
