@@ -9,7 +9,7 @@ hl.on("hyprland.start", function()
     hl.exec_cmd("swww init || swww-daemon --format xrgb")
     hl.exec_cmd("syncthing serve --no-browser")
     hl.exec_cmd("/home/eli/dotfiles/scripts/startKdeConnect.sh")
-    hl.exec_cmd("nicotone -s")
+    hl.exec_cmd("nicotine -s")
     hl.exec_cmd("protonvpn connect --country SE")
     hl.exec_cmd("/home/eli/.config/eww/scripts/start.sh")
 
