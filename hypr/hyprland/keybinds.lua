@@ -64,36 +64,6 @@ hl.bind(mainMod .. " + mouse:273", hl.dsp.window.resize(), { mouse = true })
 
 hl.bind(mainMod .. " + W", hl.dsp.exec_cmd("kitty nmtui"))
 
-hl.bind(mainMod .. " + mouse_down", hl.dsp.exec_cmd("hyprctl -q keyword cursor:zoom_factor $(hyprctl getoption cursor:zoom_factor -j| jq '.float* 1.1')"))
-
-hl.bind(mainMod .. " + mouse_up", hl.dsp.exec_cmd("hyprctl -q keyword cursor:zoom_factor $(hyprctl getoption cursor:zoom_factor -j| jq '(.float* 0.9)| if . < 1 then 1 else . end')"))
-
-hl.bind(mainMod .. " + equal", hl.dsp.exec_cmd("hyprctl -q keyword cursor:zoom_factor $(hyprctl getoption cursor:zoom_factor -j| jq '.float* 1.1')"))
-
-hl.bind(mainMod .. " + minus", hl.dsp.exec_cmd("hyprctl -q keyword cursor:zoom_factor $(hyprctl getoption cursor:zoom_factor -j| jq '(.float* 0.9)| if . < 1 then 1 else . end')"))
-
-hl.bind(mainMod .. " + KP_ADD", hl.dsp.exec_cmd("hyprctl -q keyword cursor:zoom_factor $(hyprctl getoption cursor:zoom_factor -j| jq '.float* 1.1')"))
-
-hl.bind(mainMod .. " + KP_SUBTRACT", hl.dsp.exec_cmd("hyprctl -q keyword cursor:zoom_factor $(hyprctl getoption cursor:zoom_factor -j| jq '(.float* 0.9)| if . < 1 then 1 else . end')"))
-
-hl.bind(mainMod .. " + SHIFT" .. " + " .. "mouse_up", hl.dsp.exec_cmd("hyprctl -q keyword cursor:zoom_factor 1"))
-
-hl.bind(mainMod .. " + SHIFT" .. " + " .. "mouse_down", hl.dsp.exec_cmd("hyprctl -q keyword cursor:zoom_factor 1"))
-
-hl.bind(mainMod .. " + SHIFT" .. " + " .. "minus", hl.dsp.exec_cmd("hyprctl -q keyword cursor:zoom_factor 1"))
-
-hl.bind(mainMod .. " + SHIFT" .. " + " .. "KP_SUBTRACT", hl.dsp.exec_cmd("hyprctl -q keyword cursor:zoom_factor 1"))
-
-hl.bind(mainMod .. " + SHIFT" .. " + " .. 0, hl.dsp.exec_cmd("hyprctl -q keyword cursor:zoom_factor 1"))
-
-hl.bind(mainMod .. " + mouse:275", hl.dsp.exec_cmd("hyprctl -q keyword cursor:zoom_factor 1"))
-
---mouse side button 1
-
-hl.bind(mainMod .. " + mouse:276", hl.dsp.exec_cmd("hyprctl -q keyword cursor:zoom_factor 1"))
-
---mouse side button  2
-
 -- Actions
 
 hl.bind(mainMod .. " + N", hl.dsp.exec_cmd("swaync-client -t"))
@@ -252,6 +222,55 @@ hl.bind("XF86AudioMicMute", hl.dsp.exec_cmd("pactl set-sink-mute @DEFAULT_SOURCE
 
 
 
+
+local MAX_ZOOM =3 
+local MIN_ZOOM = 1
+local ZOOM_TOGGLE_FACTOR = 1.5 
+---@param offset number 
+---@return nil
+local function zoom(multipler)
+    local current = hl.get_config("cursor.zoom_factor")
+    if multipler ~= nil then 
+        current = current*multipler
+    end
+    current = math.max(MIN_ZOOM, math.min(MAX_ZOOM,current))
+    hl.config( { cursor = { zoom_factor = current}})
+end 
+local function set_zoom(val)
+    hl.config( { cursor = {zoom_factor = val}})
+end
+
+local ZOOM_INCREMENT = 0.1
+local increase_zoom = function() zoom(1+ZOOM_INCREMENT) end
+local decrease_zoom = function() zoom(1-ZOOM_INCREMENT) end
+local reset_zoom = function() set_zoom(1) end
+
+
+hl.bind(mainMod .. " + mouse_up", increase_zoom)
+
+hl.bind(mainMod .. " + mouse_down", decrease_zoom)
+
+hl.bind(mainMod .. " + equal",increase_zoom) 
+
+hl.bind(mainMod .. " + minus", decrease_zoom) 
+
+hl.bind(mainMod .. " + KP_ADD", increase_zoom) 
+hl.bind(mainMod .. " + KP_SUBTRACT", decrease_zoom) 
+
+hl.bind(mainMod .. " + SHIFT" .. " + " .. "mouse_up", reset_zoom) 
+hl.bind(mainMod .. " + SHIFT" .. " + " .. "mouse_down", reset_zoom) 
+hl.bind(mainMod .. " + SHIFT" .. " + " .. "minus", reset_zoom)
+
+hl.bind(mainMod .. " + SHIFT" .. " + " .. "KP_SUBTRACT", reset_zoom)
+
+hl.bind(mainMod .. " + SHIFT" .. " + " .. 0, reset_zoom)
+
+--mouse side button 1
+hl.bind(mainMod .. " + mouse:275", reset_zoom)
+
+
+--mouse side button  2
+hl.bind(mainMod .. " + mouse:276", reset_zoom)
 
 
 
